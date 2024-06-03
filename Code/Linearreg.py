@@ -35,8 +35,10 @@ from sklearn.preprocessing import StandardScaler # standard scaler library to br
 from sklearn.model_selection import train_test_split # to split the data into Train and test data 
 from sklearn.linear_model import LinearRegression # Linear regression library 
 from sklearn.metrics import r2_score,mean_squared_error # Metrics to evaluate the linear regression model
+import pickle,joblib #libraries to save models
 
 Path=input("Enter the path of dataset: ") # Enter the path of dataset
+modelpath=input("Enter the path to save models: ") #Enter the path to save models
 
 df=pd.read_csv(Path+"Mobileprice.csv") # Import and read the csv file
 
@@ -82,7 +84,9 @@ r2 = r2_score(ytest,ypred_test)
 print("mse of lr model:",mse)
 print("r2 of lr model:",r2)
 
-
+#Save the model
+with open(modelpath+'lrmodel.sav', 'wb') as f:
+    pickle.dump(lin_reg, f)  
 
 
 

@@ -34,8 +34,10 @@ import sklearn  #scientific library for machine learning
 from sklearn.tree import DecisionTreeRegressor #Decision tree class from sklearn
 from sklearn.model_selection import train_test_split # to split the data into Train and test data 
 from sklearn.metrics import r2_score,mean_squared_error # Metrics to evaluate the linear regression model
+import pickle,joblib #libraries to save models
 
 Path=input("Enter the path of dataset: ") # Enter the path of dataset
+modelpath=input("Enter the path to save models: ") #Enter the path to save models
 
 df=pd.read_csv(Path+"Mobileprice.csv") # Import and read the csv file
 
@@ -83,3 +85,8 @@ dt_r2 = r2_score(ytest,dt_yprd)
 #PRINT THE METRICS
 print("mse of lr model:",dt_mse)
 print("r2 of lr model:",dt_r2)
+
+#Save the model
+
+with open(modelpath+'dtmodel.sav', 'wb') as f:
+    pickle.dump(dt_model, f)    
