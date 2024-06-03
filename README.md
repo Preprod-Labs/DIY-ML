@@ -1,4 +1,4 @@
-# PreProd Corp DIY simple ML scripts for ML pipeline
+# DIY ML project for implementation of ML models from PreProd Corp
 
 This is a Repository of DIY-ML git feature branch
 
@@ -9,7 +9,8 @@ This is a Repository of DIY-ML git feature branch
 3. Convert the json file to csv data to be used for EDA and ML modelling either by using Mongodb compass by import and export method OR using python 
 4. Python code to convert JSON file is provided (TRY yourself -> JSONtoCSV.PY in CODE directory ) if not refer to csv file which is also provided (Mobileprice.csv) 
 5. Execute scripts in CODE file to get the feel of BASIC ML pipeline to predict the Mobile phone prices ( Linearreg.py,Decisiontree.py and Randomforest.py )
-6. save the appropriate model as per performance 
+6. save the models from all algorithms and choose best model for further usage
+7. NOTE: The models are performed on 1000 rows of data which might overfit some models , hence choose hyperparameters appropriately as per your choice and also collect similar data from internet , add more data and perform modelling to achieve best metrics
 
 **Data definition:**
 
